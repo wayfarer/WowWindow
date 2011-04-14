@@ -1,0 +1,217 @@
+<!doctype html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>WowWindow Demo</title>
+    <style type="text/css">
+        body {background:#333;}
+        img {border: 2px solid #fff;}
+        a:hover img {border: 2px solid #666;}
+        #wrapper {background:#ddd;width:940px;margin: 5px auto;border: 2px solid #fff;padding: 20px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+        .popup-section {padding-bottom: 5px; margin-bottom: 5px; border-bottom: 1px dashed #333;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/wowwindow.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.wowwindow.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.popups a').wowwindow({
+                draggable: true
+            });
+            $('.popups-rotate a').wowwindow({
+                rotate: true,
+                draggable: true
+            });
+            $('.popups-rotate-multiple a').wowwindow({
+                rotate: true,
+                rotations: 3,
+                draggable: true
+            });
+
+            /**
+             * The YouTube IFRAME doesn't work on local content,
+             * so for the purposes of this demo, the 'videoIframe'
+             * option has been set to false.  It is recommended to
+             * keep it set to true (the default) for compatibility
+             * with devices that are not Flash enabled.
+             */
+
+            $('a[rel=video]').wowwindow({
+                draggable: true,
+                height: 225,
+                width: 400,
+                videoIframe: false
+            });
+            $('a[rel=video_rotate]').wowwindow({
+                draggable: true,
+                rotate: true,
+                height: 225,
+                width: 400,
+                videoIframe: false
+            });
+            $('a[rel=video_multi_rotate]').wowwindow({
+                draggable: true,
+                rotate: true,
+                rotations: 3,
+                height: 225,
+                width: 400,
+                videoIframe: false
+            });
+
+            $('#youtube-auto-thumbnails a').wowwindow({
+                draggable: true,
+                width: 480,
+                height: 390,
+                videoIframe: false,
+                autoYouTubeThumb: 'default'
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+
+            <div class="popup-section">
+                <h2>Image Content</h2>
+                <h3>Default:</h3>
+                <div class="popups">
+                    <a href="images/sample1.jpg"><img src="images/thumbnails/sample1.jpg" alt="sample 1"></a>
+                    <a href="images/sample2.jpg"><img src="images/thumbnails/sample2.jpg" alt="sample 2"></a>
+                    <a href="images/sample3.jpg"><img src="images/thumbnails/sample3.jpg" alt="sample 3"></a>
+                    <a href="images/sample4.jpg"><img src="images/thumbnails/sample4.jpg" alt="sample 4"></a>
+                    <a href="images/sample5.jpg"><img src="images/thumbnails/sample5.jpg" alt="sample 5"></a>
+                </div>
+                <h3>With Rotation:</h3>
+                <div class="popups-rotate">
+                    <a href="images/sample1.jpg"><img src="images/thumbnails/sample1.jpg" alt="sample 1"></a>
+                    <a href="images/sample2.jpg"><img src="images/thumbnails/sample2.jpg" alt="sample 2"></a>
+                    <a href="images/sample3.jpg"><img src="images/thumbnails/sample3.jpg" alt="sample 3"></a>
+                    <a href="images/sample4.jpg"><img src="images/thumbnails/sample4.jpg" alt="sample 4"></a>
+                    <a href="images/sample5.jpg"><img src="images/thumbnails/sample5.jpg" alt="sample 5"></a>
+                </div>
+
+                <h3>With Multiple Rotations:</h3>
+                <div class="popups-rotate-multiple">
+                    <a href="images/sample1.jpg"><img src="images/thumbnails/sample1.jpg" alt="sample 1"></a>
+                    <a href="images/sample2.jpg"><img src="images/thumbnails/sample2.jpg" alt="sample 2"></a>
+                    <a href="images/sample3.jpg"><img src="images/thumbnails/sample3.jpg" alt="sample 3"></a>
+                    <a href="images/sample4.jpg"><img src="images/thumbnails/sample4.jpg" alt="sample 4"></a>
+                    <a href="images/sample5.jpg"><img src="images/thumbnails/sample5.jpg" alt="sample 5"></a>
+                </div>
+
+            </div>
+
+            <div class="popup-section">
+
+                <h2>Inline Content</h2>
+
+                <h3>Default:</h3>
+                <div class="popups">
+                    <p><a title="Example 1" href="#example1">Example 1</a>,&nbsp;
+                        <a title="Example 2" href="#example2">Example 2</a>,&nbsp;
+                        <a title="Example 3" href="#example3">Example 3</a></p>
+                </div>
+
+                <h3>With Rotation:</h3>
+                <div class="popups-rotate">
+                    <p><a title="Example 1" href="#example1">Example 1</a>,&nbsp;
+                        <a title="Example 2" href="#example2">Example 2</a>,&nbsp;
+                        <a title="Example 3" href="#example3">Example 3</a></p>
+                </div>
+
+                <h3>With Multiple Rotations:</h3>
+                <div class="popups-rotate-multiple">
+                    <p><a title="Example 1" href="#example1">Example 1</a>,&nbsp;
+                        <a title="Example 2" href="#example2">Example 2</a>,&nbsp;
+                        <a title="Example 3" href="#example3">Example 3</a></p>
+                </div>
+
+            </div>
+
+            <div class="popup-section">
+
+                <h2>Iframe Content</h2>
+                <h3>Default:</h3>
+                <div class="popups">
+                    <p><a title="Google" href="http://www.google.com">Google</a>,&nbsp;
+
+                        <a title="Yahoo" href="http://www.yahoo.com">Yahoo</a></p>
+                </div>
+                <h3>With Rotation:</h3>
+                <div class="popups-rotate">
+                    <p><a title="Google" href="http://www.google.com">Google</a>,&nbsp;
+                        <a title="Yahoo" href="http://www.yahoo.com">Yahoo</a></p>
+
+                </div>
+                <h3>With Multiple Rotations:</h3>
+                <div class="popups-rotate-multiple">
+                    <p><a title="Google" href="http://www.google.com">Google</a>,&nbsp;
+                        <a title="Yahoo" href="http://www.yahoo.com">Yahoo</a></p>
+                </div>
+
+            </div>
+
+            <div class="popup-section">
+                <h2>Video Content</h2>
+                <h3>Standard:</h3>
+                <p><a rel="video" title="Corus 2010 - Round 1" href="http://www.youtube.com/watch?v=h8EOm9fuqhE&feature=grec_index"><img src="images/thumbnails/video1.jpg" alt="" /></a> &nbsp; <a rel="video" title="unTitle Sequence" href="http://vimeo.com/7459910"><img src="images/thumbnails/video2.jpg" alt="" /></a></p>
+                <h3>With Rotation:</h3>
+                <p><a rel="video_rotate" title="Corus 2010 - Round 1" href="http://www.youtube.com/watch?v=h8EOm9fuqhE&feature=grec_index"><img src="images/thumbnails/video1.jpg" alt="" /></a> &nbsp; <a rel="video_rotate" title="unTitle Sequence" href="http://vimeo.com/7459910"><img src="images/thumbnails/video2.jpg" alt="" /></a></p>
+
+                <h3>With Multiple Rotation:</h3>
+                <p><a rel="video_multi_rotate" title="Corus 2010 - Round 1" href="http://www.youtube.com/watch?v=h8EOm9fuqhE&feature=grec_index"><img src="images/thumbnails/video1.jpg" alt="" /></a> &nbsp; <a rel="video_multi_rotate" title="unTitle Sequence" href="http://vimeo.com/7459910"><img src="images/thumbnails/video2.jpg" alt="" /></a></p>
+            </div>
+
+            <div id="youtube-auto-thumbnails">
+                <h2>YouTube Content with Auto-Generating Thumbnails</h2>
+                <a title="I Heard Angels Singing" href="http://www.youtube.com/watch?v=s0WDTtIeSAI"><img src="images/play.gif" alt=""></a>
+                <a title="Theory Of A Deadman - Hell Just Aint The Same" href="http://www.youtube.com/watch?v=LY4Nph4SKwQ"><img src="images/play.gif" alt=""></a>
+                <a title="Bob Dylan - Ballad of a Thin Man" href="http://www.youtube.com/watch?v=FjcSjEVndZw"><img src="images/play.gif" alt=""></a>
+                <a title="Adenyum - Tes Etats d'Ame" href="http://www.youtube.com/watch?v=muR48HtgcN0"><img src="images/play.gif" alt=""></a>
+                <a title="Halloween" href="http://www.youtube.com/watch?v=mH9VpTGIjj8"><img src="images/play.gif" alt=""></a>
+                <a title="King Crimson - Ladies Of The Road" href="http://www.youtube.com/watch?v=WQKp5FVslG0"><img src="images/play.gif" alt=""></a>
+                <a title="The Ramones - We're a Happy Family" href="http://www.youtube.com/watch?v=7rzUHBrGHdo"><img src="images/play.gif" alt=""></a>
+                <a title="David Gilmore - Echos Acoustic Version" href="http://www.youtube.com/watch?v=KPXWKO-EBgc"><img src="images/play.gif" alt=""></a>
+                <a title="Mystical Dream" href="http://www.youtube.com/watch?v=nN_ny1Y1g3g"><img src="images/play.gif" alt=""></a>
+                <a title="Foggy Mountain Breakdown" href="http://www.youtube.com/watch?v=icMTVV5Lwaw&NR=1"><img src="images/play.gif" alt=""></a>
+                <a title="Bible Black - Heaven and Hell" href="http://www.youtube.com/watch?v=QUs3i9oCs3U"><img src="images/play.gif" alt=""></a>
+                <a title="Awesome Australian Anthem" href="http://www.youtube.com/watch?v=iwlAUZ1QrtE"><img src="images/play.gif" alt=""></a>
+                <a title="Queen of Ragtime" href="http://www.youtube.com/watch?v=6nTeAkfPNUY"><img src="images/play.gif" alt=""></a>
+                <a title="Tribute to the Eagles" href="http://www.youtube.com/watch?v=NMEB13mrU-I"><img src="images/play.gif" alt=""></a>
+                <a title="Hit Me Baby One More Time" href="http://www.youtube.com/watch?v=-NwqN-xj9Xs"><img src="images/play.gif" alt=""></a>
+                <a title="In A Gadda Da Vida" href="http://www.youtube.com/watch?v=2bQZ6l_cq5Y"><img src="images/play.gif" alt=""></a>
+                <a title="21st Century Schizoid Man" href="http://www.youtube.com/watch?v=8Qa0hvtEvn4"><img src="images/play.gif" alt=""></a>
+                <a title="Always look on the bright side of life" href="http://www.youtube.com/watch?v=dQ4ZkbldTsw"><img src="images/play.gif" alt=""></a>
+                <a title="Genesis - Entangled live" href="http://www.youtube.com/watch?v=_FFgpcYHQzg"><img src="images/play.gif" alt=""></a>
+                <a title="Live and Let Die" href="http://www.youtube.com/watch?v=JK2hKzZss5Y"><img src="images/play.gif" alt=""></a>
+                <a title="When An Old Cricketer Leaves The Crease" href="http://www.youtube.com/watch?v=Xt1C00e__5c"><img src="images/play.gif" alt=""></a>
+            </div>
+
+            <div style="display:none;">
+                <div id="example1">
+                    <div class="window-inner">
+                        <h3>Example 1</h3>
+
+                        <img src="images/sample1.jpg" alt="sample1" class="left" />
+                        <p>Here is some content that is displayed on the page, but is hidden from the browsers by default.  It is then placed into the wowwindow by targeting its ID in the HREF attribute of the link.</p>
+                    </div>
+                </div>
+                <div id="example2">
+                    <div class="window-inner">
+                        <h3>Example 2</h3>
+                        <img src="images/sample2.jpg" alt="sample1" class="left" />
+
+                        <p>The nice thing about inline content, is that it is easily read by search engines spiders, while displayed in an elegant manner to users.  This is nice when doing Search Engine Optimization for websites.</p>
+                    </div>
+                </div>
+                <div id="example3">
+                    <div class="window-inner">
+                        <h3>Example 3</h3>
+                        <img src="images/sample3.jpg" alt="sample1" class="left" />
+                        <p>Here is some more content....</p>
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</body>
