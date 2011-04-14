@@ -1,0 +1,19 @@
+Current version: 0.6.01 beta
+
+Changelog:
+
+0.6.01 beta
+
+        Updated demo pack to use jQuery 1.5.1. Due to a flaw in jQuery 1.5 using the jQuery.clone() method, in regards to IE9 (RC1), use of jQuery 1.5 is not recommended
+
+0.6.0 beta
+
+        Adjusted styles for better compatibility with multiple environments
+        Fixed issue in IE6 where overlay was not stationary when window was scrolled
+        Fixed issue in IE6 where window was broken when "fixedWindow" option was selected
+        Fixed issue in IE6 where the title of the window did not appear.
+
+0.5.2 beta
+
+        Added automatic YouTube thumbnails feature
+        Fixed incompatibility issue with local content for demo pack.
