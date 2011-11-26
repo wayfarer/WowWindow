@@ -1,5 +1,5 @@
 /*
- * Wowwindow, version 0.6.2 beta (2011-11-23)
+ * Wowwindow, version 0.6.3 beta (2011-11-26)
  * (c) Copyright 2010 Abel Mohler
  * http://wayfarerweb.com/jquery/plugins/wowwindow/
  * Licensed under the MIT license
@@ -338,9 +338,18 @@
                         marginLeft: '-' + ($('#wowwindow').outerWidth() / 2) + 'px'
                     });
                     if(transform_supported) {
+                        var cX, cY;
+                        if(event.clientX && event.clientY) {
+                            cX = event.clientX;
+                            cY = event.clientY;
+                        }
+                        else {
+                            cX = $(this).offset().left;
+                            cY = $(this).offset().top;
+                        }
                         $('#wowwindow').css({//position determined relative to window, even if !o.fixedWindow, since playground is initially placed relative to scrollbars
-                            left: event.clientX + 'px',
-                            top: event.clientY + 'px'
+                            left: cX + 'px',
+                            top: cY + 'px'
                         }).animate({
                             left: ($('body > .overlayPlaygroundPlayground').width() / 2) + 'px',
                             top: ($('body > .overlayPlaygroundPlayground').height() / 2) + 'px'
