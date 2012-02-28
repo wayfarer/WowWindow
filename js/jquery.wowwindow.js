@@ -1,5 +1,5 @@
 /*
- * Wowwindow, version 0.6.3 beta (2011-11-26)
+ * Wowwindow, version 0.6.4 beta (2012-02-24)
  * (c) Copyright 2010 Abel Mohler
  * http://wayfarerweb.com/jquery/plugins/wowwindow/
  * Licensed under the MIT license
@@ -333,9 +333,18 @@
                             }
                         });
                     }
+                    var marginTop = $('#wowwindow').outerHeight() / 2,
+                    marginLeft = $('#wowwindow').outerWidth() / 2;
+                    
+                    if(($('body > .overlayPlaygroundPlayground').height() / 2) - marginTop < 0)
+                        marginTop = $('body > .overlayPlaygroundPlayground').height() / 2;
+                    
+                    if(($('body > .overlayPlaygroundPlayground').width() / 2) - marginLeft < 0)
+                        marginLeft = $('body > .overlayPlaygroundPlayground').width() / 2;
+                    
                     $('#wowwindow').css({
-                        marginTop: '-' + ($('#wowwindow').outerHeight() / 2) + 'px',
-                        marginLeft: '-' + ($('#wowwindow').outerWidth() / 2) + 'px'
+                        marginTop: '-' + marginTop + 'px',
+                        marginLeft: '-' + marginLeft + 'px'
                     });
                     if(transform_supported) {
                         var cX, cY;
@@ -397,10 +406,18 @@
                                 console.log($.fn.wowwindow.ii + '. ' + width + ',' + height);
                             }
                             if(width) {
+                                var marginTop = (height + 20) / 2,
+                                marginLeft = (width + 20) / 2;
+                                if(($('body > .overlayPlaygroundPlayground').height() / 2) - marginTop < 0)
+                                    marginTop = $('body > .overlayPlaygroundPlayground').height() / 2;
+
+                                if(($('body > .overlayPlaygroundPlayground').width() / 2) - marginLeft < 0)
+                                    marginLeft = $('body > .overlayPlaygroundPlayground').width() / 2;
+                                
                                 $('#wowwindow').animate({//this code doesn't get executed until the image loads
                                     width: (width + 20) + 'px',
-                                    marginTop: '-' + ((height + 20) / 2) + 'px',
-                                    marginLeft: '-' + ((width + 20) / 2) + 'px'
+                                    marginTop: '-' + marginTop + 'px',
+                                    marginLeft: '-' + marginLeft + 'px'
                                 }, {
                                     queue: o.yabbadabbadoo,
                                     duration: 300,
