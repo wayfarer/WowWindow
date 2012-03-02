@@ -1,5 +1,5 @@
 /*
- * Wowwindow, version 0.6.4 beta (2012-02-24)
+ * Wowwindow, version 0.6.5 beta (2012-03-02)
  * (c) Copyright 2010 Abel Mohler
  * http://wayfarerweb.com/jquery/plugins/wowwindow/
  * Licensed under the MIT license
@@ -346,7 +346,7 @@
                         marginTop: '-' + marginTop + 'px',
                         marginLeft: '-' + marginLeft + 'px'
                     });
-                    if(transform_supported) {
+                    if((o.zoom || o.rotate) && transform_supported) {
                         var cX, cY;
                         if(event.clientX && event.clientY) {
                             cX = event.clientX;
